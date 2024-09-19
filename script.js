@@ -91,6 +91,8 @@ function generatePDF() {
         const marginBottom = 20; // Margen inferior para las páginas
         const contentMargin = 10; // Margen lateral del contenido
 
+        pdf.setTextColor(0, 0, 0); // Color negro para el texto
+
         for (const [question, answer] of Object.entries(data)) {
             // Ajustar texto largo
             const questionText = `${question}:`;
@@ -99,32 +101,37 @@ function generatePDF() {
             
             // Ajustar pregunta
             const questionLines = pdf.splitTextToSize(questionText, contentWidth);
+            pdf.setFontSize(14);
+            pdf.setTextColor(100, 100, 100); // Gris oscuro para las preguntas
             for (const line of questionLines) {
                 if (y + lineHeight * 2 > pdf.internal.pageSize.height - marginBottom) {
                     pdf.addPage();
                     y = 20; // Reiniciar el espacio vertical
                     pdf.setFontSize(14); // Reajustar el tamaño de fuente en la nueva página
+                    pdf.setTextColor(100, 100, 100); // Gris oscuro para las preguntas
                 }
                 
-                pdf.setFontSize(14);
                 pdf.text(line, contentMargin, y);
                 y += lineHeight;
             }
             
             // Ajustar respuesta
             const answerLines = pdf.splitTextToSize(answerText, contentWidth);
+            pdf.setFontSize(12); // Tamaño de fuente para las respuestas
+            pdf.setTextColor(0, 0, 0); // Negro para las respuestas
             for (const line of answerLines) {
                 if (y + lineHeight > pdf.internal.pageSize.height - marginBottom) {
                     pdf.addPage();
                     y = 20; // Reiniciar el espacio vertical
+                    pdf.setFontSize(12); // Reajustar el tamaño de fuente en la nueva página
+                    pdf.setTextColor(0, 0, 0); // Negro para las respuestas
                 }
                 
-                pdf.setFontSize(12); // Tamaño de fuente para las respuestas
                 pdf.text(line, contentMargin, y);
                 y += lineHeight;
             }
             
-            y += lineHeight; // Espacio extra después de cada pregunta
+            y += lineHeight * 2; // Espacio extra después de cada pregunta y respuesta
         }
 
         // Guardar el PDF
