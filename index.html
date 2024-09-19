@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <title>Formulario</title>
+    </head>
+<body>
+    <header>
+        <img src="./img/Logo.png" alt="logo">
+        <h1>Colegio Jesús en el Huerto de los Olivos</h1>
+    </header>
+
+        
+    <form id="Formulario">
+        <div class="actual">
+            <label for="fechaHoy">Fecha actual:</label>
+            <input type="date" id="fechaHoy" required>
+            <label for="cursoSala">Sala/curso al que desea ingresar:</label>
+            <input type="text" id="cursoSala" required>
+        </div>
+
+        <h2>Datos del aspirante</h2>
+        <label for="name">Apellido y nombre:</label>
+        <input type="text" id="name" required>
+
+        <label for="nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="nacimiento" required>
+
+        <label for="nacionalidad">Nacionalidad:</label>
+        <input type="text" id="nacionalidad" required>
+
+        <label for="colegioProveniente">Nombre del colegio del cual proviene:</label>
+        <input type="text" id="colegioProveniente" required>
+
+        <label for="colegiosAnteriores">Colegios anteriores al actual:</label>
+        <input type="text" id="colegiosAnteriores" required>
+
+        <h2>Datos de la familia</h2>
+        
+        <label for="madre">Apellido y nombre de la madre:</label>
+        <input type="text" id="madre" required>
+        
+        <label for="celularMadre">Celular:</label>
+        <input type="tel" id="celularMadre" required>
+
+        <label for="mailMadre">Mail:</label>
+        <input type="email" id="mailMadre" required>
+
+        <label for="nacimientoMadre">Fecha de Nacimiento:</label>
+        <input type="date" id="nacimientoMadre" required>
+
+        <label for="nacionalidadMadre">Nacionalidad:</label>
+        <input type="text" id="nacionalidadMadre" required>
+
+        <label for="ocupacionMadre">Profesión/ocupación:</label>
+        <input type="text" id="ocupacionMadre" required>
+
+        <label for="padre">Apellido y nombre del padre:</label>
+        <input type="text" id="padre" required>
+        
+        <label for="celularPadre">Celular:</label>
+        <input type="tel" id="celularPadre" required>
+
+        <label for="mailPadre">Mail:</label>
+        <input type="email" id="mailPadre" required>
+
+        <label for="nacimientoPadre">Fecha de Nacimiento:</label>
+        <input type="date" id="nacimientoPadre" required>
+
+        <label for="nacionalidadPadre">Nacionalidad:</label>
+        <input type="text" id="nacionalidadPadre" required>
+
+        <label for="ocupacionPadre">Profesión/ocupación:</label>
+        <input type="text" id="ocupacionPadre" required>
+
+        <label for="conformacionFamilia">¿Cómo está conformada la familia?:</label>
+        <textarea id="conformacionFamilia" required></textarea>
+
+        <label for="situacionSalud">¿Hay alguna situación de salud que crea conveniente comentar?:</label>
+        <textarea id="situacionSalud" required></textarea>
+
+        <label for="proyectoIntegracion">¿Proyecto de integración?:</label>
+        <textarea id="proyectoIntegracion" required></textarea>
+
+        <label for="razonesElegir">¿Por qué razones elige nuestro colegio? (Al menos 3):</label>
+        <textarea id="razonesElegir" required></textarea>
+
+        <h3>Otros datos (marcar las opciones correspondientes y ampliar en caso de ser necesario)</h3>
+        <label for="exAlumno">¿Hay algún miembro ex alumno en la familia?</label>
+        <input type="text" id="exAlumno">
+
+        <label for="hermanosJHO">Hermano/s en el JHO:</label>
+        <input type="text" id="hermanosJHO">
+
+        <label for="informacionAdicional">¿Considera importante agregar alguna información más?:</label>
+        <textarea id="informacionAdicional" required></textarea>
+
+        <button type="button" onclick="generatePDF()">Generar PDF</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
