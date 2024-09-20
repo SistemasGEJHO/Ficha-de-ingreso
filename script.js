@@ -2,7 +2,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const fechaHoyInput = document.getElementById('fechaHoy');
     const today = new Date().toISOString().split('T')[0];
     fechaHoyInput.value = today;
+
+    // Agregar el manejador de evento para el envío del formulario
+    const formulario = document.getElementById('Formulario');
+    formulario.addEventListener('submit', handleFormSubmit);
 });
+
+function handleFormSubmit(event) {
+    event.preventDefault(); // Evita el envío del formulario por defecto
+    const formulario = document.getElementById('Formulario');
+
+    // Verifica si el formulario es válido
+    if (formulario.checkValidity()) {
+        generatePDF(); // Llama a la función para generar el PDF
+    } else {
+        alert("Por favor, complete todos los campos obligatorios.");
+    }
+}
 
 function generatePDF() {
     console.log('Generando PDF...');

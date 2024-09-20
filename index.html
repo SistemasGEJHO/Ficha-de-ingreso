@@ -82,7 +82,7 @@
         <textarea id="conformacionFamilia" required></textarea>
 
         <label for="situacionSalud">¿Hay alguna situación de salud que crea conveniente comentar?:</label>
-        <textarea id="situacionSalud" required></textarea>
+        <textarea id="situacionSalud" required placeholder="No / Si (Explicar) "></textarea>
 
         <label for="proyectoIntegracion">¿Proyecto de integración?:</label>
         <textarea id="proyectoIntegracion" required></textarea>
@@ -92,15 +92,15 @@
 
         <h3>Otros datos (marcar las opciones correspondientes y ampliar en caso de ser necesario)</h3>
         <label for="exAlumno">¿Hay algún miembro ex alumno en la familia?</label>
-        <input type="text" id="exAlumno">
+        <input type="text" required placeholder="No / Si (Nombre y Apellido)" id="exAlumno">
 
         <label for="hermanosJHO">Hermano/s en el JHO:</label>
         <input type="text" id="hermanosJHO">
 
         <label for="informacionAdicional">¿Considera importante agregar alguna información más?:</label>
-        <textarea id="informacionAdicional" required></textarea>
+        <textarea id="informacionAdicional"></textarea>
 
-        <button type="button" onclick="generatePDF()">Generar PDF</button>
+        <button type="submit">Generar PDF</button>
     </form>
 
     <script src="script.js"></script>
