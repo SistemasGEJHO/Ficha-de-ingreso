@@ -1,81 +1,158 @@
+/* Estilo general para el cuerpo */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
     background-color: #f9f9f9;
-    font-size: 20px;
 }
-header{
+
+/* Encabezado */
+header {
     display: flex;
-    width: 100%;
-    justify-content: center;
     align-items: center;
-    height: 120px;
-    gap: 2%;
-    text-wrap:balance;
-}
-header img{
-    width: 60px;
-}
-
-form {
-    margin: 0 auto;
-    max-width: 800px; /* Ajusta el tamaño máximo del formulario */
-    display: flex;
-    flex-direction: column;
-    background: white;
+    justify-content: space-between;
     padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+header img {
+    max-height: 80px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+/* Formulario general */
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
-    color: #333;
-}
-
+/* Estilo para etiquetas e inputs */
 label {
-    margin-top: 10px;
+    display: block;
+    margin-bottom: 8px;
     font-weight: bold;
 }
 
-input, textarea {
+/* Ajuste uniforme para todos los inputs */
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: calc(100% - 20px);
     padding: 10px;
-    margin-top: 5px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 95%;
-    height: 20px;
+    box-sizing: border-box;
+}
+input{
+    margin-left: 0 !important;
+}
+
+
+
+/* Alineación y espaciado de secciones */
+h2 {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 18px;
 }
 
 textarea {
-    resize: vertical;
+    height: 100px;
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.actual {
+/* Estilos para los checkboxes de sacramentos */
+#sacramentos {
     display: flex;
-    width: 100%;
     flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.actual label {
+.seleccionesSac {
+    display: flex;
+    align-items: center;
+}
+
+.seleccionesSac label{
+    margin-right: 4px !important;
+}
+
+input[type="checkbox"] {
+    margin-bottom: 10px;
+}
+
+#idiomas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.seleccionesIdioma {
+    display: flex;
+    align-items: center;
+}
+.seleccionesIdioma label{
+    margin-right: 4px !important;
+}
+
+input[type="checkbox"] {
     margin-right: 10px;
 }
 
-textarea{
-    height: 40px;
-    resize: none;   /* Deshabilita el redimensionamiento manual */
+input[type="text"] {
+    margin-left: 10px;
+}
+
+/* Botón de envío */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    color: #333;
+}
+
+footer p {
+    margin: 5px 0;
 }

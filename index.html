@@ -16,7 +16,6 @@
 
         
     <form id="Formulario">
-        
         <div class="actual">
             <label for="fechaHoy">Fecha actual:</label>
             <input type="date" id="fechaHoy" required>
@@ -32,7 +31,7 @@
         <input type="date" id="nacimiento" required>
 
         <label for="nacionalidad">Nacionalidad:</label>
-        <input type="text" id="nacionalidad" required>
+        <select type="text" id="nacionalidad" required></select>
 
         <label for="colegioProveniente">Nombre del colegio del cual proviene:</label>
         <input type="text" id="colegioProveniente" required>
@@ -40,11 +39,48 @@
         <label for="colegiosAnteriores">Colegios anteriores al actual:</label>
         <input type="text" id="colegiosAnteriores" required>
 
-        <h2>Datos de la familia</h2>
+        <label for="sacramentos"><h2>Sacramentos:</h2></label>
+        <div id="sacramentos">
+            <div class="seleccionesSac">
+                <label for="bautismo">Bautismo</label>
+                <input type="checkbox" id="bautismo" name="sacramentos" value="bautismo">
+            </div>
         
+            <div class="seleccionesSac">
+                <label for="primera_comunion">Primera Comunión</label>
+                <input type="checkbox" id="primera_comunion" name="sacramentos" value="primera_comunion">
+            </div>
+
+            <div class="seleccionesSac">
+                <label for="confirmacion">Confirmación</label>
+                <input type="checkbox" id="confirmacion" name="sacramentos" value="confirmacion">
+            </div>
+        </div>
+
+        <h2>Idiomas</h2>
+        <label for="idiomas">Selecciona los idiomas que habla:</label>
+<div id="idiomas">
+    <div class="seleccionesIdioma">
+        <label for="ingles">Inglés</label>
+        <input type="checkbox" id="ingles" name="idiomas" value="ingles">
+    </div>
+
+    <div class="seleccionesIdioma">
+        <label for="frances">Francés</label>
+        <input type="checkbox" id="frances" name="idiomas" value="frances">
+    </div>
+
+    <div class="seleccionesIdioma">
+        <label for="otroIdioma">Otro (especificar):</label>
+        <input type="text" id="otroIdioma" name="idiomas" placeholder="Escribe otro idioma">
+    </div>
+</div>
+
+        <h2>Familia</h2>
+        <h3>Datos de la Madre</h3>
         <label for="madre">Apellido y nombre de la madre:</label>
         <input type="text" id="madre" required>
-        
+
         <label for="celularMadre">Celular:</label>
         <input type="tel" id="celularMadre" required>
 
@@ -55,14 +91,15 @@
         <input type="date" id="nacimientoMadre" required>
 
         <label for="nacionalidadMadre">Nacionalidad:</label>
-        <input type="text" id="nacionalidadMadre" required>
+       <select type="text" id="nacionalidadMadre" required></select>
 
         <label for="ocupacionMadre">Profesión/ocupación:</label>
         <input type="text" id="ocupacionMadre" required>
 
+        <h3>Datos del Padre</h3>
         <label for="padre">Apellido y nombre del padre:</label>
         <input type="text" id="padre" required>
-        
+
         <label for="celularPadre">Celular:</label>
         <input type="tel" id="celularPadre" required>
 
@@ -73,7 +110,7 @@
         <input type="date" id="nacimientoPadre" required>
 
         <label for="nacionalidadPadre">Nacionalidad:</label>
-        <input type="text" id="nacionalidadPadre" required>
+        <select type="text" id="nacionalidadPadre" required></select> 
 
         <label for="ocupacionPadre">Profesión/ocupación:</label>
         <input type="text" id="ocupacionPadre" required>
@@ -90,7 +127,7 @@
         <label for="razonesElegir">¿Por qué razones elige nuestro colegio? (Al menos 3):</label>
         <textarea id="razonesElegir" required></textarea>
 
-        <h3>Otros datos (marcar las opciones correspondientes y ampliar en caso de ser necesario)</h3>
+        <h3>Otros datos</h3>
         <label for="exAlumno">¿Hay algún miembro ex alumno en la familia?</label>
         <input type="text" required placeholder="No / Si (Nombre y Apellido)" id="exAlumno">
 
@@ -103,6 +140,11 @@
         <button type="submit">Generar PDF</button>
     </form>
 
+    <footer>
+            <p>La presente solicitud de ingreso no implica vacante</p>
+            <p>Ricardo Gutierrez 1199</p>
+            <p>TEL: 4790-5772 / 47998990</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
